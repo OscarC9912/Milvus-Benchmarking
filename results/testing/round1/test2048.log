@@ -1,0 +1,42 @@
+Executing the 2048 Dim
+=== small ===
+IVF_FLAT
+Insertion Time: 55.48993277549744
+Number of entities in Milvus: 100000
+Index Time: 13.710648775100708
+Query Time: 27.581692934036255
+Recall: 0.9946660000000002
+HNSW
+Insertion Time: 55.91058421134949
+Number of entities in Milvus: 100000
+Index Time: 14.126075744628906
+Query Time: 10.954649448394775
+Recall: 0.9987719999999999
+=== medium ===
+IVF_FLAT
+Insertion Time: 276.0714409351349
+Number of entities in Milvus: 500000
+Index Time: 62.409626483917236
+Query Time: 106.04511141777039
+Recall: 0.9980960000000001
+HNSW
+Insertion Time: 270.188866853714
+Number of entities in Milvus: 500000
+Index Time: 63.04084134101868
+Query Time: 59.78465986251831
+Recall: 0.9987320000000002
+
+Executing the 2048 Dim
+=== large ===
+IVF_FLAT
+Insertion Time: 548.3421828746796
+Number of entities in Milvus: 1000000
+Index Time: 125.45755338668823
+Query Time: 230.1938762664795
+Recall: 0.9987099999999999
+HNSW
+Insertion Time: 541.4887988567352
+Number of entities in Milvus: 1000000
+Index Time: 126.33552765846252
+Query Time: 118.62569999694824
+Recall: 0.9987900000000002

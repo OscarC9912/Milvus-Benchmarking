@@ -1,0 +1,95 @@
+Profiling: Insertion
+Insertion Time: 6633.320560455322
+Number of entities in Milvus: 12641221
+Filename: /ssddata/zchenhj/vectorDB_study/memory_test/milvus_mem.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    80  37153.9 MiB  37153.9 MiB           1       @profile
+    81                                             def insert_entitiy(self, batch_size=0):
+    82                                                 
+    83  37153.9 MiB      0.0 MiB           1           assert self.collection is not None
+    84                                                 
+    85  37644.9 MiB      0.0 MiB           2           def _batch_insert(collection, entities, batch_size):
+    86  37644.9 MiB      0.0 MiB           1               num_entities = len(entities[0])
+    87  37787.9 MiB  -4712.9 MiB         634               for i in tqdm(range(0, int(num_entities / batch_size) + 1)):    
+    88  37787.9 MiB  -4706.7 MiB         633                   start_idx = i * batch_size
+    89  37787.9 MiB  -4706.7 MiB         633                   end_index = min((i + 1) * batch_size, num_entities)
+    90  37787.9 MiB  -4706.7 MiB         633                   if start_idx == end_index:
+    91                                                             break
+    92  37787.9 MiB  -4706.7 MiB         633                   batch = [entities[0][start_idx:end_index], entities[1][start_idx:end_index]]
+    93  37787.9 MiB  -4570.5 MiB         633                   collection.insert(batch)
+    94                                         
+    95  37644.9 MiB      0.0 MiB           1           entities = [
+    96  37644.9 MiB    491.0 MiB    12641224               [int(i) for i in range(self.num_entities)], 
+    97  37644.9 MiB      0.0 MiB           1               self.data
+    98                                                 ]
+    99                                                 
+   100  37644.9 MiB      0.0 MiB           1           if batch_size == 0:
+   101                                                     _ = self.collection.insert(entities)
+   102                                                 else:
+   103  37644.9 MiB      0.0 MiB           1               start_insert_time = time.time()
+   104  37781.4 MiB     -6.5 MiB           1               _batch_insert(self.collection, entities, batch_size)
+   105  37781.4 MiB      0.0 MiB           1               end_insert_time = time.time()
+   106  37781.4 MiB      0.0 MiB           1               print(f"Insertion Time: {end_insert_time - start_insert_time}")
+   107  37781.4 MiB      0.0 MiB           1               self.collection.flush()
+   108  37781.4 MiB      0.0 MiB           1               print(f"Number of entities in Milvus: {self.collection.num_entities}")
+
+
+Profiling: Index Creation
+Index Time: 938.6781604290009
+Filename: /ssddata/zchenhj/vectorDB_study/memory_test/milvus_mem.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+   111  37291.7 MiB  37291.7 MiB           1       @profile
+   112                                             def create_index(self, indexType: str):
+   113                                                 
+   114  37291.7 MiB      0.0 MiB           1           assert indexType in config_index_param
+   115  37291.7 MiB      0.0 MiB           1           self.indexType = indexType
+   116                                                 
+   117  37291.7 MiB      0.0 MiB           1           index = {
+   118  37291.7 MiB      0.0 MiB           1               "index_type": indexType,
+   119  37291.7 MiB      0.0 MiB           1               "metric_type": "L2",
+   120  37291.7 MiB      0.0 MiB           1               "params": config_index_param[indexType],
+   121                                                 }
+   122  37291.7 MiB      0.0 MiB           1           self.collection.drop_index()
+   123  37291.7 MiB      0.0 MiB           1           start_create_index = time.time()
+   124  37172.4 MiB   -119.3 MiB           1           self.collection.create_index(self.data_name, index)
+   125  37172.4 MiB      0.0 MiB           1           end_create_index = time.time()
+   126  37172.4 MiB      0.0 MiB           1           self.time_create_index = end_create_index - start_create_index
+   127  37172.4 MiB      0.0 MiB           1           print(f"Index Time: {end_create_index - start_create_index}")
+
+
+Profiling: ANN Search
+Query Time: 105.12643218040466
+Filename: /ssddata/zchenhj/vectorDB_study/memory_test/milvus_mem.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+   130  37172.4 MiB  37172.4 MiB           1       @profile
+   131                                             def topk_anns(self, top_k: int, metricType: str):
+   132                                                 
+   133  37168.6 MiB     -3.9 MiB           1           self.collection.load()
+   134  37168.6 MiB      0.0 MiB           1           self.top_k = top_k
+   135  37168.6 MiB      0.0 MiB           1           self.metric = metricType
+   136                                                 
+   137  37168.6 MiB      0.0 MiB           1           search_params = {
+   138  37168.6 MiB      0.0 MiB           1               "metric_type": metricType,
+   139  37168.6 MiB      0.0 MiB           1               "params": config_search_param[self.indexType],
+   140                                                 }
+   141                                                 
+   142  37168.6 MiB      0.0 MiB           1           query_start_time = time.time()
+   143  37252.7 MiB     84.1 MiB           1           result = self.collection.search(self.vectors_to_search, self.data_name, search_params, limit=top_k)
+   144  37252.7 MiB      0.0 MiB           1           query_end_time = time.time()
+   145  37252.7 MiB      0.0 MiB           1           self.time_query = query_end_time - query_start_time
+   146  37252.7 MiB      0.0 MiB           1           print(f"Query Time: {self.time_query}")
+   147                                                 
+   148  37252.7 MiB      0.0 MiB           1           self.anns_result = []
+   149  37256.7 MiB      0.0 MiB        2001           for hits in result:
+   150  37256.7 MiB      0.0 MiB        2000               curr_result = set() # top-k neighbour of the current query point
+   151  37256.7 MiB      1.0 MiB      202000               for hit in hits:
+   152  37256.7 MiB      3.0 MiB      200000                   curr_result.add(int(hit.id))
+   153  37256.7 MiB      0.0 MiB        2000               self.anns_result.append(curr_result)
+
+

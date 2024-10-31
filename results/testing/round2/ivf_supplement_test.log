@@ -1,0 +1,40 @@
+Executing the 768 Dim
+=== small ===
+Insertion Time: 22.970752954483032 || Batchsize: 20000
+Number of entities in Milvus: 100000
+Index: IVF_FLAT | Parameter: {'nlist': 100} | Index Time: 5.5405778884887695
+Query Size: 5000 || Query Time: 8.026681423187256
+Recall: 0.98879
+=== medium ===
+Insertion Time: 106.48800539970398 || Batchsize: 20000
+Number of entities in Milvus: 500000
+Index: IVF_FLAT | Parameter: {'nlist': 500} | Index Time: 34.3813796043396
+Query Size: 5000 || Query Time: 13.47241497039795
+Recall: 0.9744759999999998
+=== large ===
+Insertion Time: 211.52266883850098 || Batchsize: 20000
+Number of entities in Milvus: 1000000
+Index: IVF_FLAT | Parameter: {'nlist': 1000} | Index Time: 90.6978223323822
+Query Size: 5000 || Query Time: 12.878765106201172
+Recall: 0.9714719999999999
+Executing the 2048 Dim
+=== small ===
+Insertion Time: 59.99157762527466 || Batchsize: 8000
+Number of entities in Milvus: 100000
+Index: IVF_FLAT | Parameter: {'nlist': 100} | Index Time: 13.601001501083374
+Query Size: 5000 || Query Time: 28.505308628082275
+Recall: 0.9946660000000002
+=== medium ===
+Insertion Time: 275.9836130142212 || Batchsize: 8000
+Number of entities in Milvus: 500000
+Index: IVF_FLAT | Parameter: {'nlist': 500} | Index Time: 94.80032515525818
+Query Size: 5000 || Query Time: 78.96324133872986
+Recall: 0.9914900000000001
+
+
+=== large ===
+Insertion Time: 560.9531135559082 || Batchsize: 8000
+Number of entities in Milvus: 1000000
+Index: IVF_FLAT | Parameter: {'nlist': 1000} | Index Time: 187.92769193649292
+Query Size: 5000 || Query Time: 171.41011786460876
+Recall: 0.9946860000000001

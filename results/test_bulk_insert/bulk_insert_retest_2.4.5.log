@@ -1,0 +1,120 @@
+INFO - Starting the New Collection
+INFO - Collection Name: wikisum_bert_nli_mean_base_small
+INFO - Index: IVF_FLAT | Parameter: {'nlist': 100} | Index Time (declare for bulk): 0.5088028907775879
+INFO - Bulk Insertion Success
+INFO - index building progress: {'total_rows': 100000, 'indexed_rows': 100000, 'pending_index_rows': 0, 'state': 'Finished'}
+INFO - Bulk Insert: 30.87521982192993 & Indexing Time: 0.5070381164550781
+INFO - Query Size: 10000 || Query Time: 32.19846224784851 || QPS: 310.5738380617291
+INFO - Recall: 0.9885470000000001
+INFO - Current Run Complete
+
+INFO - Starting the New Collection
+INFO - Collection Name: wikisum_bert_nli_mean_base_medium
+INFO - Index: IVF_FLAT | Parameter: {'nlist': 500} | Index Time (declare for bulk): 0.5104854106903076
+INFO - Bulk Insertion Success
+INFO - index building progress: {'total_rows': 500000, 'indexed_rows': 500000, 'pending_index_rows': 0, 'state': 'Finished'}
+INFO - Bulk Insert: 202.15566778182983 & Indexing Time: 0.5062255859375
+INFO - Query Size: 10000 || Query Time: 27.029489278793335 || QPS: 369.96629484397073
+INFO - Recall: 0.971507
+INFO - Current Run Complete
+
+INFO - Starting the New Collection
+INFO - Collection Name: wikisum_bert_nli_mean_base_large
+INFO - Index: IVF_FLAT | Parameter: {'nlist': 1000} | Index Time (declare for bulk): 0.5143959522247314
+INFO - Bulk Insertion Success
+INFO - index building progress: {'total_rows': 1000000, 'indexed_rows': 1000000, 'pending_index_rows': 0, 'state': 'Finished'}
+INFO - Bulk Insert: 218.02428269386292 & Indexing Time: 0.5062544345855713
+INFO - Query Size: 10000 || Query Time: 26.29615569114685 || QPS: 380.28372350132946
+INFO - Recall: 0.9666460000000001
+INFO - Current Run Complete
+
+INFO - Starting the New Collection
+INFO - Collection Name: wikisum_bert_nli_mean_base_small
+INFO - Index: HNSW | Parameter: {'M': 24, 'efConstruction': 80} | Index Time (declare for bulk): 0.510033130645752
+INFO - Bulk Insertion Success
+INFO - index building progress: {'total_rows': 100000, 'indexed_rows': 100000, 'pending_index_rows': 0, 'state': 'Finished'}
+INFO - Bulk Insert: 30.035825729370117 & Indexing Time: 0.5057082176208496
+INFO - Query Size: 10000 || Query Time: 6.6376283168792725 || QPS: 1506.5622120735995
+INFO - Recall: 0.9947820000000002
+INFO - Current Run Complete
+
+INFO - Starting the New Collection
+INFO - Collection Name: wikisum_bert_nli_mean_base_medium
+INFO - Index: HNSW | Parameter: {'M': 24, 'efConstruction': 80} | Index Time (declare for bulk): 0.5096938610076904
+INFO - Bulk Insertion Success
+INFO - index building progress: {'total_rows': 500000, 'indexed_rows': 500000, 'pending_index_rows': 0, 'state': 'Finished'}
+INFO - Bulk Insert: 117.7408435344696 & Indexing Time: 0.5065732002258301
+INFO - Query Size: 10000 || Query Time: 8.623200416564941 || QPS: 1159.66225031605
+INFO - Recall: 0.9959460000000001
+INFO - Current Run Complete
+
+INFO - Starting the New Collection
+INFO - Collection Name: wikisum_bert_nli_mean_base_large
+INFO - Index: HNSW | Parameter: {'M': 24, 'efConstruction': 80} | Index Time (declare for bulk): 0.5100448131561279
+INFO - Bulk Insertion Success
+INFO - index building progress: {'total_rows': 1000000, 'indexed_rows': 1000000, 'pending_index_rows': 0, 'state': 'Finished'}
+INFO - Bulk Insert: 227.86526727676392 & Indexing Time: 0.5065772533416748
+INFO - Query Size: 10000 || Query Time: 14.308861017227173 || QPS: 698.8676448782671
+INFO - Recall: 0.9968040000000001
+INFO - Current Run Complete
+
+INFO - Starting the New Collection
+INFO - Collection Name: wikisum_sentence_croissant_llm_base_base_small
+INFO - Index: IVF_FLAT | Parameter: {'nlist': 100} | Index Time (declare for bulk): 0.5096654891967773
+INFO - Bulk Insertion Success
+INFO - index building progress: {'total_rows': 100000, 'indexed_rows': 100000, 'pending_index_rows': 0, 'state': 'Finished'}
+INFO - Bulk Insert: 50.330848932266235 & Indexing Time: 0.5063095092773438
+INFO - Query Size: 5000 || Query Time: 44.61968374252319 || QPS: 112.05816762064875
+INFO - Recall: 0.9940900000000001
+INFO - Current Run Complete
+
+INFO - Starting the New Collection
+INFO - Collection Name: wikisum_sentence_croissant_llm_base_base_medium
+INFO - Index: IVF_FLAT | Parameter: {'nlist': 500} | Index Time (declare for bulk): 0.509345293045044
+INFO - Bulk Insertion Success
+INFO - index building progress: {'total_rows': 500000, 'indexed_rows': 500000, 'pending_index_rows': 0, 'state': 'Finished'}
+INFO - Bulk Insert: 219.68917798995972 & Indexing Time: 0.5062422752380371
+INFO - Query Size: 5000 || Query Time: 35.005878925323486 || QPS: 142.833151273427
+INFO - Recall: 0.986398
+INFO - Current Run Complete
+
+INFO - Starting the New Collection
+INFO - Collection Name: wikisum_sentence_croissant_llm_base_base_large
+INFO - Index: IVF_FLAT | Parameter: {'nlist': 1000} | Index Time (declare for bulk): 0.5101943016052246
+INFO - Bulk Insertion Success
+INFO - index building progress: {'total_rows': 1000000, 'indexed_rows': 1000000, 'pending_index_rows': 0, 'state': 'Finished'}
+INFO - Bulk Insert: 471.7541012763977 & Indexing Time: 0.5060908794403076
+INFO - Query Size: 5000 || Query Time: 39.06392693519592 || QPS: 127.9953243895479
+INFO - Recall: 0.984988
+INFO - Current Run Complete
+
+INFO - Starting the New Collection
+INFO - Collection Name: wikisum_sentence_croissant_llm_base_base_small
+INFO - Index: HNSW | Parameter: {'M': 24, 'efConstruction': 80} | Index Time (declare for bulk): 0.5107967853546143
+INFO - Bulk Insertion Success
+INFO - index building progress: {'total_rows': 100000, 'indexed_rows': 100000, 'pending_index_rows': 0, 'state': 'Finished'}
+INFO - Bulk Insert: 57.3032443523407 & Indexing Time: 0.5061235427856445
+INFO - Query Size: 5000 || Query Time: 5.230001926422119 || QPS: 956.0225924085911
+INFO - Recall: 0.9949259999999999
+INFO - Current Run Complete
+
+INFO - Starting the New Collection
+INFO - Collection Name: wikisum_sentence_croissant_llm_base_base_medium
+INFO - Index: HNSW | Parameter: {'M': 24, 'efConstruction': 80} | Index Time (declare for bulk): 0.5095133781433105
+INFO - Bulk Insertion Success
+INFO - index building progress: {'total_rows': 500000, 'indexed_rows': 500000, 'pending_index_rows': 0, 'state': 'Finished'}
+INFO - Bulk Insert: 223.5578498840332 & Indexing Time: 0.506716251373291
+INFO - Query Size: 5000 || Query Time: 10.158149242401123 || QPS: 492.2156468354987
+INFO - Recall: 0.9972079999999998
+INFO - Current Run Complete
+
+INFO - Starting the New Collection
+INFO - Collection Name: wikisum_sentence_croissant_llm_base_base_large
+INFO - Index: HNSW | Parameter: {'M': 24, 'efConstruction': 80} | Index Time (declare for bulk): 0.5104212760925293
+INFO - Bulk Insertion Success
+INFO - index building progress: {'total_rows': 1000000, 'indexed_rows': 1000000, 'pending_index_rows': 0, 'state': 'Finished'}
+INFO - Bulk Insert: 434.4189205169678 & Indexing Time: 0.5067169666290283
+INFO - Query Size: 5000 || Query Time: 16.063348293304443 || QPS: 311.2676080169481
+INFO - Recall: 0.99765
+INFO - Current Run Complete
+

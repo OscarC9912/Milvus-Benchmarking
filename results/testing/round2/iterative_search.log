@@ -1,0 +1,7 @@
+Executing the 768 Dim
+=== small ===
+Insertion Time: 21.85534429550171 || Batchsize: 20000
+Number of entities in Milvus: 100000
+Index: IVF_FLAT | Parameter: {'nlist': 100} | Index Time: 5.067697286605835
+Iterative Search: Query Size: 10 || Query Time: 3.692202091217041
+=== medium ===

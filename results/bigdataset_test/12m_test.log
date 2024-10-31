@@ -1,0 +1,49 @@
+INFO - Starting the New Collection
+INFO - Collection Name: bert_nli_mean_base
+INFO - Index: IVF_FLAT | Parameter: {'nlist': 3555} | Index Time (declare for bulk): 0.5097808837890625
+INFO - Start Bulk Insert Workload ...
+INFO - Bulk Insert TaskID: 453313155330476812
+INFO - Bulk Insertion Success
+INFO - index building progress: {'total_rows': 12641221, 'indexed_rows': 12641221, 'pending_index_rows': 0, 'state': 'Finished'}
+INFO - Bulk Insert: 4915.917534828186 & Indexing Time: 0.5174076557159424
+INFO - Query Size: 3000 || Query Time: 40.91889214515686 || QPS: 73.31576791858669
+INFO - Recall: 0.9225599999999999
+INFO - Current Run Complete
+
+INFO - Starting the New Collection
+INFO - Collection Name: bert_nli_mean_base
+INFO - Index: HNSW | Parameter: {'M': 24, 'efConstruction': 80} | Index Time (declare for bulk): 0.5092849731445312
+INFO - Start Bulk Insert Workload ...
+INFO - Bulk Insert TaskID: 453313155343147376
+INFO - Bulk Insertion Success
+INFO - index building progress: {'total_rows': 12641221, 'indexed_rows': 12641221, 'pending_index_rows': 0, 'state': 'Finished'}
+INFO - Bulk Insert: 2863.9974768161774 & Indexing Time: 0.50705885887146
+INFO - Query Size: 3000 || Query Time: 36.690102338790894 || QPS: 81.76592074610342
+INFO - Recall: 0.9907866666666666
+INFO - Current Run Complete
+
+INFO - Starting the New Collection
+INFO - Collection Name: sentence_croissant_llm_base_base
+INFO - Index: IVF_FLAT | Parameter: {'nlist': 3555} | Index Time (declare for bulk): 0.5119872093200684
+INFO - Start Bulk Insert Workload ...
+INFO - Bulk Insert TaskID: 453313155394662675
+INFO - Bulk Insertion Success
+INFO - index building progress: {'total_rows': 12641221, 'indexed_rows': 12641221, 'pending_index_rows': 0, 'state': 'Finished'}
+INFO - Bulk Insert: 10916.596223592758 & Indexing Time: 0.5088818073272705
+INFO - Query Size: 500 || Query Time: 40.3050434589386 || QPS: 12.405395382078744
+INFO - Recall: 0.95074
+INFO - Current Run Complete
+
+
+INFO - Starting the New Collection
+INFO - Collection Name: sentence_croissant_llm_base_base
+INFO - Index: HNSW | Parameter: {'M': 24, 'efConstruction': 80} | Index Time (declare for bulk): 0.508145809173584
+INFO - Start Bulk Insert Workload ...
+INFO - Bulk Insert TaskID: 453362474655679213
+INFO - Bulk Insertion Success
+INFO - index building progress: {'total_rows': 12641221, 'indexed_rows': 12641221, 'pending_index_rows': 0, 'state': 'Finished'}
+INFO - Bulk Insert: 5943.159335613251 & Indexing Time: 0.5067415237426758
+INFO - Query Size: 500 || Query Time: 31.635499715805054 || QPS: 15.805029302261998
+INFO - Recall: 0.98102
+INFO - Current Run Complete
+

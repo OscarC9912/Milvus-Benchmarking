@@ -1,0 +1,24 @@
+INFO - Starting the New Collection
+INFO - Collection Name: wikisum_bert_nli_mean_base_small
+INFO - Bulk Insertion Success
+INFO - Bulk Insert without Index: 25.102542877197266
+INFO - Starting the New Collection
+INFO - Collection Name: wikisum_bert_nli_mean_base_medium
+INFO - Bulk Insertion Success
+INFO - Bulk Insert without Index: 83.97873640060425
+INFO - Starting the New Collection
+INFO - Collection Name: wikisum_bert_nli_mean_base_large
+INFO - Bulk Insertion Success
+INFO - Bulk Insert without Index: 157.98070907592773
+INFO - Starting the New Collection
+INFO - Collection Name: wikisum_sentence_croissant_llm_base_base_small
+INFO - Bulk Insertion Success
+INFO - Bulk Insert without Index: 41.96408653259277
+INFO - Starting the New Collection
+INFO - Collection Name: wikisum_sentence_croissant_llm_base_base_medium
+INFO - Bulk Insertion Success
+INFO - Bulk Insert without Index: 165.9816174507141
+INFO - Starting the New Collection
+INFO - Collection Name: wikisum_sentence_croissant_llm_base_base_large
+INFO - Bulk Insertion Success
+INFO - Bulk Insert without Index: 313.99095702171326
