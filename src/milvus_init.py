@@ -130,9 +130,9 @@ class Milvus:
         if batch_size == 0:
             _ = self.collection.insert(entities)
         else:
-            start_insert_time = time.time()
+            start_insert_time = time.process_time() # time.time()
             _batch_insert(self.collection, entities, batch_size)
-            end_insert_time = time.time()
+            end_insert_time = time.process_time() # time.time()
             logging.info(f"Insertion Time: {end_insert_time - start_insert_time} || Batchsize: {batch_size}")
             self.collection.flush()
             logging.info(f"Number of entities in Milvus: {self.collection.num_entities}")
@@ -161,9 +161,9 @@ class Milvus:
         if self.collection.has_index():
             self.collection.drop_index()
 
-        start_create_index = time.time()
+        start_create_index = time.process_time() # time.time()
         self.collection.create_index(self.data_name, index)
-        end_create_index = time.time()
+        end_create_index = time.process_time() # time.time()
         
         self.time_create_index = end_create_index - start_create_index
         logging.info(f"Index: {indexType} | Parameter: {task_index_param} | Index Time (declare for bulk): {end_create_index - start_create_index}")
@@ -171,7 +171,7 @@ class Milvus:
     
     def bulk_insert(self, file_paths):
         
-        start_bulk_insert_time = time.time()
+        start_bulk_insert_time = time.process_time() # time.time()
         
         logging.info(f"Start Bulk Insert Workload ...")
         
@@ -195,10 +195,10 @@ class Milvus:
             if curr_task.state == BulkInsertState.ImportCompleted:
                 logging.info("Bulk Insertion Success")
                 break    
-        end_bulk_insert_time = time.time()
+        end_bulk_insert_time = time.process_time() #time.time()
         
         
-        start_wait_index_time = time.time()
+        start_wait_index_time = time.process_time() #time.time()
         
         utility.wait_for_index_building_complete(self.collection_name)
         res = utility.index_building_progress(self.collection_name)
@@ -209,7 +209,7 @@ class Milvus:
             # logging.info(f"index building progress: {res}")
             index_completed = res["pending_index_rows"] == 0
         
-        end_wait_index_time = time.time()
+        end_wait_index_time = time.process_time() #time.time()
         logging.info(f"index building progress: {res}")
         
         delta = end_bulk_insert_time - start_bulk_insert_time
@@ -222,7 +222,7 @@ class Milvus:
         file_paths: [[id.npy, vector.npy], ...]
         """
         
-        start_bulk_insert_time = time.time()
+        start_bulk_insert_time = time.process_time() #time.time()
         
         logging.info(f"Start Bulk Insert Workload ...")
         
@@ -250,10 +250,10 @@ class Milvus:
                         logging.info(f"Task ID: {task_id} Completed")
                         completed.append(task_id)
                     
-        end_bulk_insert_time = time.time()
+        end_bulk_insert_time = time.process_time()# time.time()
         
         
-        start_wait_index_time = time.time()
+        start_wait_index_time = time.process_time() #time.time()
         
         utility.wait_for_index_building_complete(self.collection_name)
         res = utility.index_building_progress(self.collection_name)
@@ -264,7 +264,7 @@ class Milvus:
             # logging.info(f"index building progress: {res}")
             index_completed = res["pending_index_rows"] == 0
         
-        end_wait_index_time = time.time()
+        end_wait_index_time = time.process_time() #time.time()
         logging.info(f"index building progress: {res}")
         
         delta = end_bulk_insert_time - start_bulk_insert_time
@@ -274,7 +274,7 @@ class Milvus:
         
     def test_bulk_insert(self, file_paths):
         
-        start_bulk_insert_time = time.time()
+        start_bulk_insert_time = time.process_time() #time.time()
         
         task_id = utility.do_bulk_insert(
             collection_name=self.collection_name,
@@ -292,7 +292,7 @@ class Milvus:
             if curr_task.state == BulkInsertState.ImportCompleted:
                 logging.info("Bulk Insertion Success")
                 break    
-        end_bulk_insert_time = time.time()
+        end_bulk_insert_time = time.process_time() #time.time()
         
         delta = end_bulk_insert_time - start_bulk_insert_time
         logging.info(f"Bulk Insert without Index: {delta}")
@@ -314,12 +314,12 @@ class Milvus:
             "params": config_search_param[self.indexType],
         }
         
-        query_start_time = time.time()
+        query_start_time = time.process_time() #time.time()
         result = self.collection.search(data=self.vectors_to_search, 
                                         anns_field=self.data_name,
                                         param=search_params, limit=top_k,
                                         output_fields=[self.id_field])
-        query_end_time = time.time()
+        query_end_time = time.process_time() #time.time()
         
         self.time_query = query_end_time - query_start_time
         
